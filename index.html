@@ -1,0 +1,381 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storage Sorter | Learning Lab</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="page" id="welcomePage">
+
+        <nav class="navbar">
+            <div class="logo">
+                <span class="logo-icon">🤖</span>
+                <span>Learn<span class="logo-highlight">Lab</span></span>
+            </div>
+
+            <div class="nav-tag">INTERACTIVE LEARNING EXPERIENCE</div>
+
+            <div class="nav-right">⭐ Fun Learning</div>
+        </nav>
+
+        <main class="hero">
+
+            <div class="hero-content">
+
+                <div class="welcome-tag">
+                    ✨ WELCOME TO THE COMPUTING LAB
+                </div>
+
+                <h1>
+                    Become a<br>
+                    <span>Storage Master!</span>
+                </h1>
+
+                <p class="hero-description">
+                    Ready for a digital adventure? Help our friendly robots
+                    organize files and discover the amazing world of
+                    computer storage!
+                </p>
+
+                <div class="hero-buttons">
+                    <button class="primary-btn" onclick="showInstructions()">
+                        Start Your Adventure
+                        <span>→</span>
+                    </button>
+                </div>
+
+                <div class="hero-features">
+                    <div>🎮 Interactive Game</div>
+                    <div>⭐ Earn Points</div>
+                    <div>🧠 Learn & Play</div>
+                </div>
+
+            </div>
+
+            <div class="hero-art">
+
+                <div class="floating-card card-one">
+                    💾
+                    <span>Floppy Disk</span>
+                </div>
+
+                <div class="main-robot">
+                    <div class="robot-face">
+                        <div class="robot-antenna"></div>
+                        <div class="robot-eyes">
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="robot-smile"></div>
+                    </div>
+                    <div class="robot-body">
+                        <span>🤖</span>
+                    </div>
+                </div>
+
+                <div class="floating-card card-two">
+                    💿
+                    <span>CD-ROM</span>
+                </div>
+
+                <div class="floating-card card-three">
+                    🔌
+                    <span>USB Drive</span>
+                </div>
+
+                <div class="sparkle sparkle-one">✦</div>
+                <div class="sparkle sparkle-two">✧</div>
+                <div class="sparkle sparkle-three">✦</div>
+
+            </div>
+
+        </main>
+
+        <footer class="footer">
+            <span>© 2026 LearnLab</span>
+            <span>Learn • Explore • Play</span>
+        </footer>
+
+    </div>
+    
+<!-- INSTRUCTIONS PAGE -->
+
+<section class="instructions-page hidden" id="instructionsPage">
+
+    <div class="instruction-header">
+        <span class="welcome-tag">🎮 YOUR MISSION STARTS HERE</span>
+        <h1>How to Play <span>Storage Sorter</span></h1>
+        <p>Help our friendly robots find the right files to store!</p>
+    </div>
+
+    <div class="mission-card">
+        <div class="mission-icon">🚀</div>
+        <div>
+            <h2>Your Mission</h2>
+            <p>
+                Different files need different storage devices.
+                Your job is to identify the file size and drop it
+                into the correct robot!
+            </p>
+        </div>
+    </div>
+
+    <h2 class="section-heading">Meet Your Storage Robots</h2>
+
+    <div class="device-grid">
+
+        <div class="device-card floppy">
+            <div class="device-icon">💾</div>
+            <h3>Floppy Disk Bot</h3>
+            <p>For tiny files</p>
+            <span>Small Storage</span>
+        </div>
+
+        <div class="device-card cd">
+            <div class="device-icon">💿</div>
+            <h3>CD-ROM Drone</h3>
+            <p>For medium files</p>
+            <span>Medium Storage</span>
+        </div>
+
+        <div class="device-card usb">
+            <div class="device-icon">🔌</div>
+            <h3>USB Flash Mecha</h3>
+            <p>For huge files</p>
+            <span>Large Storage</span>
+        </div>
+
+    </div>
+
+    <div class="rules-card">
+        <h2>📖 How to Play</h2>
+
+        <div class="rule">
+            <span>01</span>
+            <p>Click Start Activity to begin.</p>
+        </div>
+
+        <div class="rule">
+            <span>02</span>
+            <p>Look at the file name and its size.</p>
+        </div>
+
+        <div class="rule">
+            <span>03</span>
+            <p>Drag the file into the correct storage robot.</p>
+        </div>
+
+        <div class="rule">
+            <span>04</span>
+            <p>Earn points for every correct answer!</p>
+        </div>
+    </div>
+
+    <div class="instruction-actions">
+        <button class="back-btn" onclick="showWelcome()">
+            ← Back
+        </button>
+
+        <button class="primary-btn" onclick="startActivity()">
+            Start Activity 🚀
+        </button>
+    </div>
+
+</section>
+
+<!-- MAIN GAME SCREEN -->
+
+<section id="gamePage" class="game-page hidden">
+
+    <header class="game-header">
+        <div class="game-brand">
+            🤖 <span>Storage Sorter</span>
+        </div>
+
+        <div class="game-stats">
+            <div class="stat-box">
+                ⏱ TIME: <span id="timer">01:30</span>
+            </div>
+            <div class="stat-box">
+                ⭐ SCORE: <span id="score">0</span>
+            </div>
+        </div>
+
+        <button class="exit-btn" onclick="showWelcome()">✕ Exit</button>
+    </header>
+
+    <div class="game-container">
+
+        <div class="game-title">
+            <span class="game-label">LEVEL 01 · COMPUTER STORAGE</span>
+            <h1>Let's Sort Some Files! 🎮</h1>
+            <p>Drag each file into the correct storage robot.</p>
+        </div>
+
+        <div class="progress-area">
+            <span>YOUR PROGRESS</span>
+            <span id="progressText">0 / 6 FILES SORTED</span>
+            <div class="progress-track">
+                <div id="progressBar"></div>
+            </div>
+        </div>
+
+        <div class="file-area">
+            <h2>📦 Files Waiting to Be Sorted</h2>
+            <p>Pick a file and drag it to the correct robot.</p>
+
+            <div id="fileList" class="file-list">
+
+                <div class="file-card" draggable="true"
+                     data-type="tiny" data-id="1">
+                    <span class="file-icon">📄</span>
+                    <div>
+                        <strong>Story Text</strong>
+                        <small>10 KB · Tiny File</small>
+                    </div>
+                    <span class="drag-icon">⠿</span>
+                </div>
+
+                <div class="file-card" draggable="true"
+                     data-type="medium" data-id="2">
+                    <span class="file-icon">🎵</span>
+                    <div>
+                        <strong>Music Track</strong>
+                        <small>500 MB · Medium File</small>
+                    </div>
+                    <span class="drag-icon">⠿</span>
+                </div>
+
+                <div class="file-card" draggable="true"
+                     data-type="large" data-id="3">
+                    <span class="file-icon">🎬</span>
+                    <div>
+                        <strong>Movie Collection</strong>
+                        <small>8 GB · Huge File</small>
+                    </div>
+                    <span class="drag-icon">⠿</span>
+                </div>
+
+                <div class="file-card" draggable="true"
+                     data-type="tiny" data-id="4">
+                    <span class="file-icon">📝</span>
+                    <div>
+                        <strong>Short Note</strong>
+                        <small>20 KB · Tiny File</small>
+                    </div>
+                    <span class="drag-icon">⠿</span>
+                </div>
+
+                <div class="file-card" draggable="true"
+                     data-type="medium" data-id="5">
+                    <span class="file-icon">🖼️</span>
+                    <div>
+                        <strong>Photo Album</strong>
+                        <small>650 MB · Medium File</small>
+                    </div>
+                    <span class="drag-icon">⠿</span>
+                </div>
+
+                <div class="file-card" draggable="true"
+                     data-type="large" data-id="6">
+                    <span class="file-icon">📁</span>
+                    <div>
+                        <strong>Backup Folder</strong>
+                        <small>32 GB · Huge File</small>
+                    </div>
+                    <span class="drag-icon">⠿</span>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="robots-area">
+
+            <h2>🤖 Choose Your Storage Robot</h2>
+
+            <div class="robot-grid">
+
+                <div class="robot-drop floppy-drop"
+                     data-target="tiny">
+                    <div class="robot-emoji">💾</div>
+                    <h3>Floppy Disk Bot</h3>
+                    <p>For tiny files</p>
+                    <div class="capacity" id="tinyCount">0 / 2</div>
+                    <div class="drop-message">Drop file here ↓</div>
+                </div>
+
+                <div class="robot-drop cd-drop"
+                     data-target="medium">
+                    <div class="robot-emoji">💿</div>
+                    <h3>CD-ROM Drone</h3>
+                    <p>For medium files</p>
+                    <div class="capacity" id="mediumCount">0 / 2</div>
+                    <div class="drop-message">Drop file here ↓</div>
+                </div>
+
+                <div class="robot-drop usb-drop"
+                     data-target="large">
+                    <div class="robot-emoji">🔌</div>
+                    <h3>USB Flash Mecha</h3>
+                    <p>For huge files</p>
+                    <div class="capacity" id="largeCount">0 / 2</div>
+                    <div class="drop-message">Drop file here ↓</div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="feedback" class="feedback">
+            ✨ Your adventure is waiting!
+        </div>
+
+    </div>
+
+</section>
+
+<!-- RESULTS SCREEN -->
+
+<section id="resultPage" class="result-page hidden">
+
+    <div class="result-card">
+        <div class="result-trophy">🏆</div>
+
+        <span class="welcome-tag">MISSION COMPLETED</span>
+
+        <h1 id="resultTitle">Amazing Work!</h1>
+
+        <p id="resultMessage">
+            You did a great job sorting your files!
+        </p>
+
+        <div class="final-score">
+            <span>YOUR FINAL SCORE</span>
+            <h2 id="finalScore">0</h2>
+            <small>POINTS</small>
+        </div>
+
+        <p id="finalProgress">0 out of 6 files sorted correctly</p>
+
+        <button class="primary-btn" onclick="restartGame()">
+            🔄 Play Again
+        </button>
+
+        <button class="back-btn" onclick="showWelcome()">
+            Back to Home
+        </button>
+    </div>
+
+</section>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
